@@ -1,0 +1,13 @@
+Software:
+- Lage webside
+- Logging av data til database
+- Strømming av kamera og sensorinformasjon til webside
+- Lage metode for reset av data daglig
+- Script for automatisk oppstart ved strømbrudd
+- Retry ved kuttet internettforbindelse
+
+
+Hardware:
+- Lodde tilkoblinger og ADC på prototype board
+- Innkjøp av utstyr
+- Lage kapslinger/beholdere for sensorer
