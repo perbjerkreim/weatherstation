@@ -5,6 +5,7 @@ Software:
 - Lage metode for reset av data daglig
 - Script for automatisk oppstart ved strømbrudd
 - Retry ved kuttet internettforbindelse
+- Metode for å ta stillbilder og pushe den nyeste til webside
 
 
 Hardware:
