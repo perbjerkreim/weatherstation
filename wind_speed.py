@@ -7,12 +7,12 @@ wind_count = 0 #variable to store number of half-rotations
 radius = 0.09 #radius of the anemometer
 interval = 5 #frequency to report, in seconds
 INERTIA = 1.18 #inertia of the anemometer
-store_speeds = [] # stores the last 4 speeds in an array
+speed_array= [] # stores the last 4 speeds in an array
 
 #calculate the wind speed
 def calculate_speed(time_sec):
     global wind_count
-    global store_speeds
+    global speed_array
     circumference = (2*math.pi)*radius #calculates the circumference of the anemometer
     rotations = wind_count/2.0
     
@@ -26,21 +26,21 @@ def calculate_speed(time_sec):
     speed = round(m_per_sec*INERTIA,3)
     
     #store the speed in the array
-    store_speeds.append(speed)
+    speed_array.append(speed)
     
     #if the array is longer than 4, discard the oldest entry
-    if len(store_speeds) > 4:
-        store_speeds = store_speeds[1:]
+    if len(speed_array) > 4:
+        speed_array = speed_array[1:]
     
     #print the array
-    #print(str(store_speeds))
+    #print(str(speed_array))
     
     return speed
 
 #check if the last 20 seconds had any gust readings
 def check_for_gusts():
-    highest = max(store_speeds)
-    lowest = min(store_speeds)
+    highest = max(speed_array)
+    lowest = min(speed_array)
     GUST_ABOVE = 8.22 #gust is defined as wind over 8.22 m/s with a duration of atleast 20 secs
     GUST_RANGE = 4.64 #and diff between highest and lowest speed is higher than 4.64 m/s
     if highest > GUST_ABOVE and highest-lowest > GUST_RANGE:
