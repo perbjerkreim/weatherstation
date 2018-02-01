@@ -4,25 +4,23 @@ from time import sleep
 import math
 
 wind_count = 0 #variable to store number of half-rotations
-radius_cm = 9.0 #radius of the anemometer
-interval = 2 #frequency to report, in seconds
+radius = 0.09 #radius of the anemometer
+interval = 5 #frequency to report, in seconds
 INERTIA = 1.18 #inertia of the anemometer
-CM_IN_A_M = 100.0 #centimeters in a meter
 store_speeds = [] # stores the last 4 speeds in an array
 
 #calculate the wind speed
 def calculate_speed(time_sec):
-    #sleep(5)
     global wind_count
     global store_speeds
-    circumference_cm = (2*math.pi)*radius_cm #calculates the circumference of the anemometer
+    circumference = (2*math.pi)*radius #calculates the circumference of the anemometer
     rotations = wind_count/2.0
     
     #calculate the distance traveled
-    dist_m = (circumference_cm*rotations)/CM_IN_A_M
+    distance = (circumference*rotations)
     
     #calculate speed form distance and time
-    m_per_sec = dist_m/time_sec
+    m_per_sec = distance/time_sec
     
     #get the acutal speed when factoring in the inertia of the system, and round to last 3 digits
     speed = round(m_per_sec*INERTIA,3)
