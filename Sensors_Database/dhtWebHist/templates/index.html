@@ -5,21 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>DHT Sensor data</title>
+	<title>Clever Title</title>
 	<link rel="stylesheet" href='../static/style.css'/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 </head>
 
 <body>
-	<h1>Sensor Data</h1>
+	<h1>Test test = new Test()</h1>
 	<div id="g1"></div>
 	<div id="g2"></div>
 	<hr>
-	<h3> Last sensor reading: {{ time }} <a href="/"class="button">REFRESH</a></h3>
+	<h3> Siste sensoravlesning: {{ time }} <a href="/"class="button">REFRESH</a></h3>
 	<hr>
-	<h3> Historical data</h3>
-	<p> Enter number of samples to retrieve: 
+	<h3> Historisk data</h3>
+	<p> Tast inn antall ønsket målinger: 
 	<form method="POST">
 		<input name ="numSamples" value= {{ numSamples }}>
 		<input type = "submit">
@@ -27,6 +27,10 @@
 	<hr>
 	<img src="/plot/temp" alt="Image Placeholder" width =49%>
 	<img src="/plot/hum" alt="Image Placeholder" width = 49%>
+	<img src="/plot/rain" alt="Image Placeholder" width = 49%>
+	<img src="/plot/pressure" alt="Image Placeholder" width = 49%>
+	<img src="/plot/altitude" alt="Image Placeholder" width = 49%>
+	<img src="/plot/windSpeed" alt="Image Placeholder" width = 49%>
 	
 	
 	</script>
