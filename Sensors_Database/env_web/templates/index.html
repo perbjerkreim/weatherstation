@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Kleivapiggen Værstasjon</title>
+	<link rel="stylesheet" href='../static/style.css'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+
+
+/* Navbar container */
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+
+</style>
+
+</head>
+
+<div class="navbar">
+	
+	<div class="dropdown">
+		<button class="dropbtn">Current
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a href="http://0.0.0.0:5000/">All</a>
+			<a href="#">Temperature</a>
+			<a href="#">Humidity</a>
+			<a href="#">Pressure</a>
+			<a href="#">Wind Speed</a>
+			<a href="#">Wind Direction</a>
+			<a href="#">Precipitation</a>
+		</div>
+	</div>
+	<a href="Camera">Camera</a>
+	<div class="dropdown">
+		<button class="dropbtn">History
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-content">
+			<a href="#">Temperature</a>
+			<a href="#">Humidity</a>
+			<a href="#">Pressure</a>
+			<a href="#">Wind Speed</a>
+			<a href="#">Wind Direction</a>
+			<a href="#">Precipitation</a>
+		</div>
+	</div>
+	<a href="About">About</a>
+	<a href="https://github.com/perbjerkreim/weatherstation">Github</a>
+	<a href="Test">Test</a>
+</div>
+
+<body>
+	
+	<div id="g1"></div>
+	<div id="g2"></div>
+	<hr>
+	<h3> Siste sensoravlesning: {{ time }} <a href="/"class="button">REFRESH</a></h3>
+	<hr>
+	<h3> Historisk data</h3>
+	<p> Tast inn antall ønsket målinger: 
+	<form method="POST">
+		<input name ="numSamples" value= {{ numSamples }}>
+		<input type = "submit">
+		</form></p>
+	<hr>
+	<img src="/plot/temp" alt="Image Placeholder" width =30%>
+	<img src="/plot/hum" alt="Image Placeholder" width = 30%>
+	<img src="/plot/rain" alt="Image Placeholder" width = 30%>
+	<img src="/plot/pressure" alt="Image Placeholder" width = 30%>
+	<img src="/plot/altitude" alt="Image Placeholder" width = 30%>
+	<img src="/plot/windSpeed" alt="Image Placeholder" width = 30%>
+	
+	
+
+	
+</body>
+
+</html>
