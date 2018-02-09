@@ -7,6 +7,7 @@ import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 import Adafruit_BMP.BMP085 as pressure_sensor
 import math
+import datetime
 
 # Software SPI config
 CLK  = 18
@@ -141,10 +142,14 @@ def logData(temp,hum,rain,pressure,altitude,windSpeed):
 #main function
 def main():
     while True:
+        start = time.time()
         wind_count = 0
         temp,hum,rain, pressure, altitude, windSpeed = getDHTdata()
         logData(temp,hum,rain,pressure,altitude,windSpeed)
         time.sleep(sampleFreq)
+        end = time.time()
+        elapsed = end-start
+        print'Logged at: ',time.strftime("%Y-%m-%d %H:%M:%S"),' loop time: ',round(elapsed,2)
 
 #execute program
 main()

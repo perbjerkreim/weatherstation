@@ -174,7 +174,7 @@ def plot_altitude():
     ys = altitudes
     fig = Figure()
     axis = fig.add_subplot(1,1,1)
-    axis.set_title("Relativ altitude [m]")
+    axis.set_title("Relative altitude [m]")
     axis.set_label("Samples")
     axis.grid(True)
     xs = range(numSamples)
