@@ -1,8 +1,8 @@
 Software:
 - Lage webside
-- Logging av data til database
 - Strømming av kamera og sensorinformasjon til webside
 - Lage metode for reset av data daglig
+- Sortere data etter dag/uke/måned/år
 - Script for automatisk oppstart ved strømbrudd
 - Retry ved kuttet internettforbindelse
 - Metode for å ta stillbilder og pushe den nyeste til webside
