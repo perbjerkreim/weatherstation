@@ -1,0 +1,5 @@
+github
+adafruit dht11/22
+adafruit bmp085
+pigpio daemon
+gpiozero
