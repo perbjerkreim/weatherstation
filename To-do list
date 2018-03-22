@@ -1,5 +1,5 @@
 Software:
-- Lage webside (iframes!!!)
+- Lage webside (iframes, jquery, javascript, livereload)
 - Strømming av kamera og sensorinformasjon til webside
 - Lage metode for reset av data daglig
 - Sortere data etter dag/uke/måned/år
