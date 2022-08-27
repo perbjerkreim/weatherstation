@@ -15,5 +15,7 @@ def reset_rainfall():
     global count
     count = 0
 
+rain_sensor.when_pressed = bucket_tipped
+
 while True:
-    rain_sensor.when_pressed = bucket_tipped
+    bucket_tipped()
