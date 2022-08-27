@@ -18,4 +18,4 @@ def reset_rainfall():
 rain_sensor.when_pressed = bucket_tipped
 
 while True:
-    bucket_tipped()
+    print(count*BUCKET_SIZE)
